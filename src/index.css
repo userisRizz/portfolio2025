@@ -1,0 +1,67 @@
+/* Import fonts */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 13%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+    --accent: 152 100% 50%;
+    --accent-foreground: 0 0% 13%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 152 100% 50%;
+    --radius: 0.5rem;
+    --nav-height: 0px;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --primary: 152 100% 50%;
+    --primary-foreground: 0 0% 13%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 95%;
+    --accent: 152 100% 50%;
+    --accent-foreground: 0 0% 95%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 63%;
+    --border: 0 0% 13%;
+    --input: 0 0% 13%;
+    --ring: 152 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg border border-border/50;
+  }
+}
+
+main {
+  padding-top: var(--nav-height);
+}
