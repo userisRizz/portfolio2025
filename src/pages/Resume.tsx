@@ -7,8 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, Send } from "lucide-react";
+import ReactGA from "react-ga4";
 
 const Resume = () => {
+  ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Resume request page" });
+  
   const [senderEmail, setSenderEmail] = useState("");
   const [messageContent, setMessageContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);

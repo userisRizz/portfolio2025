@@ -3,7 +3,7 @@ import { Sun, Moon, Monitor } from "lucide-react";
 import { log } from "console";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
+  const [theme, setTheme] = useState< "dark" | "light" | "system">("system");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

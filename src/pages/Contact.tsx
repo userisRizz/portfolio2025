@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
 
 const Contact = () => {
+  ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Contact page" });
   return (
     <div className="min-h-screen py-24 px-4">
       <div className="container mx-auto max-w-2xl">

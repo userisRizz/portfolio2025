@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import ReactGA from "react-ga4";
 
 const Hero = () => {
+
+  // ReactGA.send({ hitType: "pageview", page: "/Hero", title: "Home page(Rizwan)" });
+
   const navigate = useNavigate();
   const careerPathRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
