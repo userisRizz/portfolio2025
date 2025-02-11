@@ -3,20 +3,31 @@ import { Sun, Moon, Monitor } from "lucide-react";
 import { log } from "console";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState< "dark" | "light" | "system">("system");
+  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
   const [isOpen, setIsOpen] = useState(false);
 
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme") as
+  //     | "light"
+  //     | "dark"
+  //     | "system"
+  //     | null;
+  //   if (savedTheme) {
+  //     setTheme(savedTheme);
+  //     applyTheme(savedTheme);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as
-      | "light"
-      | "dark"
-      | "system"
-      | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      applyTheme(savedTheme);
-    }
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | "system" | null;
+    
+    // Default to "dark" if no theme is saved
+    const defaultTheme = savedTheme || "dark";
+  
+    setTheme(defaultTheme);
+    applyTheme(defaultTheme);
   }, []);
+  
 
   const applyTheme = (newTheme: "light" | "dark" | "system") => {
     const root = window.document.documentElement;
