@@ -56,6 +56,9 @@ const Navigation = () => {
           <Link to="/contact" className="hover:text-primary transition-colors">
             CONTACT
           </Link>
+          <Link to="/Projects" className="hover:text-primary transition-colors">
+            PROJECTS
+          </Link>
         </div>
 
         <div className="flex items-center space-x-4">
@@ -106,6 +109,13 @@ const Navigation = () => {
             onClick={() => setIsOpen(false)}
           >
             CONTACT
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-primary transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            PROJECTS
           </Link>
         </div>
       </div>

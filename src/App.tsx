@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Resume from "./pages/Resume";
 import ReactGA from "react-ga4";
+import Projects from "./pages/Projects";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/projects" element={<Projects/>}/>
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
